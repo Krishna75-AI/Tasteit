@@ -1,0 +1,711 @@
+
+/* ==============================
+   GLOBAL RESET
+============================== */
+
+* {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    overflow-x: hidden;
+    background: rgba(253, 239, 227, 0.919);
+}
+
+
+/* ==============================
+   NAVIGATION BAR
+============================== */
+
+header {
+    background-color: rgb(162, 215, 233);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 10vh;
+    min-height: 65px;
+    width: 100%;
+    padding: 0 40px;
+    border-radius: 0 0 10px 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.logo {
+    font-size: 30px;
+    font-weight: bold;
+    color: rgb(43, 42, 42);
+}
+
+.nav-right ul {
+    display: flex;
+    align-items: center;
+    gap: 49px;
+    list-style: none;
+}
+
+.nav-right ul li {
+    font-size: 18px;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-right ul li:hover {
+    cursor: pointer;
+    color:rgb(13, 120, 214);
+}
+
+
+/* ==============================
+   HERO SECTION
+============================== */
+
+main {
+    background:
+        linear-gradient(rgba(1, 1, 1, 0.7), rgba(1, 1, 1, 0.7)),
+        url("food.jpg");
+
+    background-size: cover;
+    background-position: center;
+
+    height: 60vh;
+    min-height: 350px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 90%;
+    margin: 30px auto;
+
+    border-radius: 10px;
+}
+
+.kri {
+    text-align: center;
+    width: 100%;
+    padding: 20px;
+}
+
+section {
+    color: aliceblue;
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 35px;
+}
+
+section h2 {
+    margin-bottom: 15px;
+}
+
+#para {
+    font-size: 20px;
+}
+
+
+/* ==============================
+   SEARCH BAR
+============================== */
+
+.search-bar {
+    width: 100%;
+}
+
+.items {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.search-input {
+    width: 350px;
+    max-width: 100%;
+    padding: 13px 18px;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+    font-size: 15px;
+}
+
+.search-input::placeholder {
+    color: #777;
+}
+
+button {
+    padding: 10px 18px;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.search-bar button {
+    background:aliceblue;
+    color: rgb(13, 120, 214);
+  }
+
+.search-bar button:hover {
+    background:rgb(138, 186, 227);
+}
+
+
+/* ==============================
+   POPULAR RECIPES HEADING
+============================== */
+
+body > div > h1 {
+    text-align: center;
+    color: #333;
+    font-size: 32px;
+    margin: 35px 0 20px;
+}
+
+
+/* ==============================
+   RECIPE CARD CONTAINER
+============================== */
+
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 30px;
+
+    padding: 30px 40px;
+
+    width: 100%;
+    max-width: 1400px;
+
+    margin: 0 auto 40px;
+}
+
+
+/* ==============================
+   RECIPE CARDS
+============================== */
+
+.card {
+    background: #fff;
+    border-radius: 16px;
+
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+
+    overflow: hidden;
+    width: 100%;
+
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.card-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+}
+
+.card-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #2c3e50;
+    margin: 15px 15px 8px;
+}
+
+.typeofood {
+    font-size: 0.9rem;
+    color: #777;
+    margin: 0 15px 5px;
+}
+
+.timep {
+    font-size: 0.9rem;
+    color: rgb(13, 120, 214);
+    font-weight: 600;
+    margin: 0 15px 15px;
+}
+
+.card button {
+    margin: 0 15px 15px;
+    padding: 10px 18px;
+    background: rgb(13, 120, 214);
+    color: white;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.card button:hover {
+    background: #8c0032;
+}
+
+
+/* ==============================
+   MODAL OVERLAY
+============================== */
+
+.modal-overlay {
+    display: none;
+
+    position: fixed;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background-color: rgba(0, 0, 0, 0.85);
+
+    z-index: 1000;
+
+    justify-content: center;
+    align-items: center;
+
+    padding: 20px;
+
+    animation: fadeIn 0.3s ease;
+}
+
+.modal-overlay.active {
+    display: flex;
+}
+
+
+/* ==============================
+   MODAL ANIMATIONS
+============================== */
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+
+/* ==============================
+   MODAL CARD
+============================== */
+
+.modal-card {
+    background: white;
+
+    border-radius: 16px;
+
+    width: 90%;
+    max-width: 900px;
+
+    max-height: 90vh;
+    overflow-y: auto;
+
+    position: relative;
+
+    animation: slideUp 0.3s ease;
+
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+
+/* ==============================
+   CLOSE BUTTON
+============================== */
+
+.close-btn {
+    position: absolute;
+
+    top: 20px;
+    right: 20px;
+
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+
+    border: none;
+
+    width: 40px;
+    height: 40px;
+
+    border-radius: 50%;
+
+    font-size: 28px;
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    z-index: 10;
+
+    transition: background 0.3s ease;
+    line-height: 1;
+}
+
+.close-btn:hover {
+    background: rgba(0, 0, 0, 0.9);
+}
+
+
+/* ==============================
+   MODAL CONTENT
+============================== */
+
+.modal-content {
+    display: flex;
+    gap: 30px;
+    padding: 40px;
+}
+
+.modal-left {
+    flex: 1;
+    min-width: 300px;
+}
+
+.modal-right {
+    flex: 1.5;
+    min-width: 0;
+}
+
+
+/* ==============================
+   MODAL IMAGE
+============================== */
+
+.modal-img {
+    width: 100%;
+    height: 300px;
+
+    object-fit: cover;
+
+    border-radius: 12px;
+    margin-bottom: 20px;
+}
+
+
+/* ==============================
+   MODAL TAGS
+============================== */
+
+.modal-tags {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.tag {
+    background: #fff0f0;
+
+    padding: 8px 16px;
+
+    border-radius: 20px;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    color: #ed002d;
+
+    border: 1px solid #ed002d;
+}
+
+
+/* ==============================
+   MODAL TITLE
+============================== */
+
+.modal-right h2 {
+    font-size: 32px;
+    color: #333;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+
+/* ==============================
+   INGREDIENTS SECTION
+============================== */
+
+.ingredients-section {
+    margin-bottom: 30px;
+}
+
+.ingredients-section h3 {
+    font-size: 20px;
+    color: #333;
+
+    margin-bottom: 15px;
+
+    border-bottom: 2px solid #ed002d;
+    padding-bottom: 10px;
+}
+
+#ingredients-list {
+    list-style: none;
+    padding: 0;
+}
+
+#ingredients-list li {
+    padding: 8px 0 8px 25px;
+
+    position: relative;
+
+    color: #555;
+    line-height: 1.6;
+}
+
+#ingredients-list li::before {
+    content: "✓";
+
+    position: absolute;
+    left: 0;
+
+    color: #4CAF50;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+
+/* ==============================
+   INSTRUCTIONS SECTION
+============================== */
+
+.instructions-section {
+    margin-bottom: 20px;
+}
+
+.instructions-section h3 {
+    font-size: 20px;
+    color: #333;
+
+    margin-bottom: 15px;
+
+    border-bottom: 2px solid #ed002d;
+    padding-bottom: 10px;
+}
+
+#modal-instructions {
+    line-height: 1.8;
+    color: #555;
+
+    white-space: pre-line;
+    text-align: justify;
+}
+
+
+/* ==============================
+   VIDEO LINK
+============================== */
+
+.video-link {
+    display: inline-block;
+
+    margin-top: 20px;
+    padding: 12px 24px;
+
+    background: #ed002d;
+    color: white;
+
+    text-decoration: none;
+
+    border-radius: 8px;
+
+    font-weight: 600;
+
+    transition: background 0.3s ease;
+}
+
+.video-link:hover {
+    background: #8c0032;
+}
+
+
+/* ==============================
+   MODAL SCROLLBAR
+============================== */
+
+.modal-card::-webkit-scrollbar {
+    width: 8px;
+}
+
+.modal-card::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+.modal-card::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+}
+
+.modal-card::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+
+/* ==============================
+   TABLET RESPONSIVENESS
+============================== */
+
+@media (max-width: 1024px) {
+
+    .card-container {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        padding: 25px;
+        gap: 20px;
+    }
+
+    .nav-right ul {
+        gap: 25px;
+    }
+
+}
+
+
+/* ==============================
+   MOBILE RESPONSIVENESS
+============================== */
+
+@media (max-width: 768px) {
+
+    header {
+        flex-direction: column;
+        height: auto;
+        padding: 20px;
+        gap: 20px;
+    }
+
+    .nav-left {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .nav-right ul {
+        gap: 25px;
+    }
+
+    .nav-right ul li {
+        font-size: 15px;
+    }
+
+    main {
+        width: 94%;
+        height: 50vh;
+        min-height: 320px;
+    }
+
+    section {
+        margin-bottom: 30px;
+    }
+
+    section h2 {
+        font-size: 32px;
+    }
+
+    section p {
+        font-size: 16px;
+        padding: 0 20px;
+    }
+
+    .search-input {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .card-container {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        padding: 20px;
+        gap: 15px;
+    }
+
+    .card-img {
+        height: 160px;
+    }
+
+    .card-title {
+        font-size: 1rem;
+    }
+
+    .modal-content {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .modal-left {
+        min-width: 100%;
+    }
+
+    .modal-card {
+        width: 95%;
+        max-height: 95vh;
+    }
+
+    .modal-right h2 {
+        font-size: 24px;
+    }
+
+    .close-btn {
+        top: 10px;
+        right: 10px;
+
+        width: 35px;
+        height: 35px;
+
+        font-size: 24px;
+    }
+
+    .modal-img {
+        height: 200px;
+    }
+
+}
+
+
+/* ==============================
+   SMALL MOBILE SCREENS
+============================== */
+
+@media (max-width: 480px) {
+
+    .nav-right ul {
+        gap: 15px;
+    }
+
+    .logo {
+        font-size: 26px;
+    }
+
+    section h2 {
+        font-size: 26px;
+    }
+
+    .card-container {
+        grid-template-columns: 1fr;
+        padding: 20px;
+    }
+
+    .card-img {
+        height: 220px;
+    }
+
+    body > div > h1 {
+        font-size: 26px;
+    }
+
+}

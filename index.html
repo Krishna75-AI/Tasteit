@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href = "style.css">
+    <title>Recipe Finder</title>
+</head>
+<body>
+    <header>
+         <div class="nav-left">
+            <div class="logo">Tasteit</div>
+        </div>
+        <div class="nav-right">
+            <ul type="none">
+                <li>Home</li>
+                <li>Discover</li>
+                <li>About us</li>
+            </ul>
+
+        </div>
+        </header>
+        <main>
+
+            <div class = "kri">
+
+                <section>   
+                    <h2>Explore the World with food</h2>
+                    <p id = "para">1M+ Recipe at your fingertips</p>
+                </section><br>
+                <div class="search-bar">
+                    <div class="items">
+                    <input type="text" class="search-input" id="search-input" placeholder="find your recipe">
+                    <button onclick="getValue()">Search</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+        
+
+        <div><h1 style = "color:rgb(53, 52, 52)">Popular Recipes</h1></div>
+        <div class="card-container" id="card-container">
+        
+    </div>
+
+
+    <div class="modal-overlay" id="modal-overlay">
+        <div class="modal-card">
+            <button class="close-btn" onclick="closeModal()">&times;</button>
+            <div class="modal-content">
+                <div class="modal-left">
+                    <img src="" alt="" id="modal-img" class="modal-img">
+                    <div class="modal-tags">
+                        <span class="tag" id="modal-category"></span>
+                        <span class="tag" id="modal-area"></span>
+                    </div>
+                </div>
+                <div class="modal-right">
+                    <h2 id="modal-title"></h2>
+                    <div class="ingredients-section">
+                        <h3>Ingredients</h3>
+                        <ul id="ingredients-list"></ul>
+                    </div>
+                    <div class="instructions-section">
+                        <h3>Instructions</h3>
+                        <p id="modal-instructions"></p>
+                    </div>
+                    <a href="" target="_blank" id="modal-video" class="video-link">Watch Video Tutorial</a>
+                </div>
+            </div>
+        </div>
+    </div>
+        
+        
+
+<script src="./script.js"></script>
+    
+</body>
+</html>
