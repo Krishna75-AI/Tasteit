@@ -1,0 +1,292 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Tasteit</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+
+/* ABOUT US PAGE */
+
+.nav-right ul {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.nav-right li a {
+    text-decoration: none;
+    color: #222;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.nav-right li a:hover {
+    color: #ffffff;
+}
+
+.about-hero {
+    width: 90%;
+    min-height: 250px;
+    margin: 30px auto;
+    border-radius: 15px;
+    background: linear-gradient(135deg, #a2d7e9, #d9eff5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.about-heading h1 {
+    font-size: 42px;
+    color: #173b4a;
+    margin-bottom: 15px;
+}
+
+.about-heading p {
+    font-size: 18px;
+    color: #333;
+}
+
+.about-container {
+    width: 85%;
+    max-width: 1200px;
+    margin: 40px auto;
+}
+
+.about-description {
+    background: #ffffff;
+    padding: 30px;
+    margin-bottom: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.about-description h2,
+.team-section h2 {
+    color: #24566a;
+    margin-bottom: 15px;
+}
+
+.about-description p {
+    line-height: 1.8;
+    color: #444;
+    font-size: 16px;
+}
+
+.team-section {
+    text-align: center;
+    margin: 50px 0;
+}
+
+.team-subtitle {
+    color: #666;
+    margin-bottom: 30px;
+}
+
+.team-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.team-card {
+    background: #ffffff;
+    padding: 30px 15px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease;
+}
+
+.team-card:hover {
+    transform: translateY(-7px);
+}
+
+.team-card h3 {
+    color: #24566a;
+    margin-bottom: 12px;
+}
+
+.team-card p {
+    color: #444;
+    margin-bottom: 12px;
+}
+
+.team-card span {
+    display: inline-block;
+    background: #a2d7e9;
+    padding: 7px 15px;
+    border-radius: 20px;
+    font-size: 13px;
+}
+
+.about-footer {
+    text-align: center;
+    background: #a2d7e9;
+    padding: 35px 15px;
+    border-radius: 12px;
+    margin: 40px 0;
+}
+
+.about-footer h2 {
+    color: #173b4a;
+    margin-bottom: 10px;
+}
+
+.about-footer p {
+    margin-bottom: 20px;
+}
+
+.back-home {
+    display: inline-block;
+    background: #24566a;
+    color: white;
+    text-decoration: none;
+    padding: 12px 25px;
+    border-radius: 25px;
+    transition: background 0.3s ease;
+}
+
+.back-home:hover {
+    background: #173b4a;
+}
+
+.site-footer {
+    background: #a2d7e9;
+    padding: 20px;
+    text-align: center;
+}
+
+/* RESPONSIVE DESIGN */
+
+@media (max-width: 768px) {
+    .team-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .about-heading h1 {
+        font-size: 32px;
+    }
+
+    .about-container {
+        width: 92%;
+    }
+}
+
+@media (max-width: 480px) {
+    .team-container {
+        grid-template-columns: 1fr;
+    }
+
+    header {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .nav-right ul {
+        gap: 15px;
+    }
+
+    .about-heading h1 {
+        font-size: 27px;
+    }
+
+    .about-heading p {
+        font-size: 15px;
+    }
+}
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="nav-left">
+            <div class="logo">Tasteit</div>
+        </div>
+
+        <div style = "text-decoration: none;" class="nav-right" >
+            <ul type="none">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#card-container">Discover</a></li>
+                <li><a href="about.html">About Us</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main class="about-hero">
+        <section class="about-heading">
+            <h1>About Tasteit</h1>
+            <p>Discover delicious recipes and explore the world of food!</p>
+        </section>
+    </main>
+
+    <section class="about-container">
+
+        <div class="about-description">
+            <h2>Who We Are</h2>
+            <p>
+                Welcome to Tasteit, your personal recipe finder!
+                Our website helps users discover different recipes
+                from around the world. Whether you are looking for
+                something new to cook or searching for your favourite
+                dish, Tasteit makes finding recipes simple and easy.
+            </p>
+        </div>
+
+        <div class="about-description">
+            <h2>Our Project</h2>
+            <p>
+                Tasteit is a Recipe Finder website developed using
+                HTML, CSS and JavaScript. We use TheMealDB API to
+                fetch recipes and display their ingredients,
+                instructions and cooking details.
+            </p>
+        </div>
+
+        <div class="team-section">
+            <h2>Meet Our Team</h2>
+            <p class="team-subtitle">
+                The people behind Tasteit
+            </p>
+
+            <div class="team-container">
+
+                <div class="team-card">
+                    <h3>kRISHNA KUMAR S</h3>
+                    <p>Roll Number: 20251IST0089</p>
+                    <span>Team Member</span>
+                </div>
+
+                <div class="team-card">
+                    <h3>ADITYA</h3>
+                    <p>Roll Number: 20251IST0072</p>
+                    <span>Team Member</span>
+                </div>
+
+                <div class="team-card">
+                    <h3>MURAGESH R SATALINGOL</h3>
+                    <p>Roll Number: 20251IST0090</p>
+                    <span>Team Member</span>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="about-footer">
+            <h2>Thank You for Visiting Tasteit!</h2>
+            <p>Good food brings people together.</p>
+            <a href="index.html" class="back-home">Back to Home</a>
+        </div>
+
+    </section>
+
+    <footer class="site-footer">
+        <p>© 2026 Tasteit | Recipe Finder</p>
+    </footer>
+
+</body>
+</html>

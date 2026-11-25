@@ -39,13 +39,23 @@ header {
     font-weight: bold;
     color: rgb(43, 42, 42);
 }
+.nav-right li a {
+    text-decoration: none;
+    color: #222;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+}
 
 .nav-right ul {
     display: flex;
     align-items: center;
     gap: 49px;
     list-style: none;
+    text-decoration: none;
+    
 }
+
 
 .nav-right ul li {
     font-size: 18px;
